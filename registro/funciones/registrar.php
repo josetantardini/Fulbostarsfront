@@ -31,7 +31,7 @@ if($password != $rpassword){
 elseif (strpos($email,"@")==0 || strpos($email,".")==0 ) {
     echo "<p class='alert alert-danger'>"."No coincide con un Email ejemplo: gergino@hotmail.com."."</p>";
 }else{
-echo $mobile;
+
 
 //url de destino
 $url = 'http://localhost:4000/';
