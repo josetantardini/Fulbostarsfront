@@ -25,7 +25,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
+<?php
+    
 
+?>
 <div class="login-page">
   <div class="form">
       <input type="text" id="name" name="name" maxlength="40" onkeypress="return soloLetras(event)" placeholder="Name"/>
@@ -59,6 +62,8 @@
 <script src="../static/scripts.js"></script>
 
 <script src="funciones/valida.js"></script>
+
+
 <script >
 $('.message a').click(function(){
    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
