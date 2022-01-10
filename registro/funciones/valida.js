@@ -10,6 +10,7 @@ $(document).ready(function() {
         var country = $('#country').val();
         var password = $('#password').val();
         var rpassword = $('#rpassword').val();
+        var billetera = $('#billetera').val();
         var isChecked = document.getElementById('acept').checked;
         if (isChecked) {
             var acept = 1;
@@ -35,8 +36,8 @@ $(document).ready(function() {
                     'rpassword': rpassword,
                     'acept': acept,
                     'suscribe': suscribe,
-                    'email': email
-
+                    'email': email,
+                    'billetera': billetera
                 },
                 beforeSend: function() {
                     $('#result').html('...')

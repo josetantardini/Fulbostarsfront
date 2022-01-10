@@ -1,4 +1,3 @@
-
 <?php
 //API URL
 
@@ -6,7 +5,7 @@ if(isset($_POST['enviar'])){
   
     
     
-if( $_POST["enviar"] != null && $_POST["password"]!= null && $_POST["email"] != null && $_POST["rpassword"] != null && $_POST["lastname"] != null && $_POST["city"] != null && $_POST["country"] != null && $_POST["mobile"] != null){
+if( $_POST["enviar"] != null && $_POST["password"]!= null && $_POST["email"] != null && $_POST["rpassword"] != null && $_POST["lastname"] != null && $_POST["name"] != null &&  $_POST["billetera"] != null ){
  if($_POST["acept"] == 1){
 
 $password = $_POST['password'];
@@ -19,10 +18,22 @@ $city = $_POST['city'];
 $mobile = $_POST['mobile'];
 $acept = $_POST['acept'];
 $subscribe = $_POST['suscribe'];
+$billetera = $_POST['billetera'];
 
 
-if(strpos($mobile,"+")==0){
- $mobile = "+".$mobile;
+$navatar = rand(1, 20);
+$ncamiseta = rand(1, 6);
+$nescudo = rand(1, 6);
+
+$camiseta = "camiseta".$ncamiseta.".png";
+$escudo = "escudo".$nescudo.".png";
+$avatar = $navatar.".png";
+
+
+$regexp = '/[^a-zA-Z\d]/';
+
+if(strcmp($mobile,'')==0){
+    $mobile = null;
 }
 
 
@@ -43,12 +54,13 @@ elseif(preg_match('/[^a-zA-Z\d]/', $name)!=0){
 elseif(preg_match('/[a-z]/', $mobile)!=0 ||  preg_match('/[A-Z]/', $mobile)!=0){
     echo "<p class='alert alert-danger'>Numero no valido</p>";
 }
-elseif(strlen($mobile)<8){
-    echo "<p class='alert alert-danger'>El numero de telefono no puede tener menos de 8 digitos</p>";
-}
 elseif (strpos($email,"@")==0 || strpos($email,".")==0 ) {
     echo "<p class='alert alert-danger'>"."No coincide con un Email ejemplo: gergino@hotmail.com."."</p>";
-}else{
+}
+
+
+
+else{
 
 
 //url de destino
@@ -58,15 +70,19 @@ $url = 'http://localhost:4000';
 $ch = curl_init($url);
 //datos a enviar
 $data = array(
-    'mobile' => $mobile,
+    'mobile' => htmlspecialchars($mobile),
     'password' => $password,
-    'email' => $email,
-    'name' => $name,
-    'lastname' => $lastname,
-    'city' => $city,
-    'country' => $country,
-    'subscribe' => $subscribe,
-    'terms' => $acept
+    'email' => htmlspecialchars($email),
+    'name' => htmlspecialchars($name),
+    'lastname' => htmlspecialchars($lastname),
+    'city' => htmlspecialchars($city),
+    'country' => htmlspecialchars($country),
+    'subscribe' => htmlspecialchars($subscribe),
+    'terms' => htmlspecialchars($acept),
+    'billetera' => htmlspecialchars($billetera),
+    'avatar' => htmlspecialchars($avatar),
+    'escudo' => htmlspecialchars($escudo),
+    'camiseta' => htmlspecialchars($camiseta)
     
 
 );
@@ -93,15 +109,18 @@ if(isset($result['error'])){
     echo "<p class='alert alert-danger'>".$result['error']."</p>";
 }
 
-if(isset($result['codigoemail']) && isset($result['codigomobile'])){
+if(isset($result['codigoemail'])){
 //recibimos los codigos de verificacion del usuario
 $codmail = $result['codigoemail'];
+if(isset($result['codigomobile'])){
 $codmobile = $result['codigomobile'];
-
+}
 
 session_start();
 $_SESSION['codigoemail'] = $codmail;
+if(isset($result['codigomobile'])){
 $_SESSION['codigomobile'] = $codmobile;
+}
 $_SESSION['usuario'] = $email;
 $_SESSION['cont'] = 3;
 
@@ -133,4 +152,3 @@ else{
 
 
 ?>
-
