@@ -1,0 +1,80 @@
+.billeteravisible {
+    display: none;
+}
+
+.contenidorbilletera {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(202, 202, 202, 0.507);
+    width: 400px;
+    vertical-align: center;
+    margin: 10px;
+}
+
+.contenidorbilletera p {
+    margin: 10px;
+    font-size: 17px;
+}
+
+.billeteravisible {
+    color: rgba(59, 59, 59, 0.8);
+}
+
+.billeterainvisible {
+    color: rgba(59, 59, 59, 0.8);
+    font-size: 20px !important;
+}
+
+.contenidorbilletera p i {
+    margin-left: 10px;
+    background-color: rgba(0, 102, 255, 0.507);
+    border-radius: 5px;
+    padding: 10px;
+    height: 100%;
+    color: rgb(0, 75, 187);
+}
+
+.mensaje {
+    word-wrap: break-word;
+    width: 500px;
+    font-size: 15px;
+}
+
+.withdraw {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.msjpublickey {
+    color: rgba(68, 68, 68, 0.856);
+    font-size: 25px;
+}
+
+.formularioretiro {
+    display: flex;
+    flex-direction: column;
+}
+
+.formularioretiro input[type=text] {
+    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 18px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#codigomonto {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#result {
+    font-size: 19px;
+}

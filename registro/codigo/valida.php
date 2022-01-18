@@ -84,6 +84,18 @@ if($codigoRespuesta === 200){
 curl_close($ch);
 session_unset();
 session_destroy();
+?>
+<script>
+$(document).ready(function(){
+ //Cada 10 segundos (10000 milisegundos) se ejecutará la función refrescar
+ setTimeout(refrescar, 4000);
+});
+    function refrescar(){
+ //Actualiza la página
+ location.reload();
+}
+        </script>
+<?php
 
 }else{  //esto que vemos debajo es exactamente lo mismo que arriba pero que en caso contrario de que sea sms y email lo que hay que cargar
     if($_POST['codigoemail'] == $_SESSION['codigoemail'] && $_POST['codigomobile'] == $_SESSION['codigomobile']){
@@ -122,6 +134,19 @@ if($codigoRespuesta === 200){
 curl_close($ch);
 session_unset();
 session_destroy();
+?>
+<script>
+$(document).ready(function(){
+ //Cada 10 segundos (10000 milisegundos) se ejecutará la función refrescar
+ setTimeout(refrescar, 4000);
+});
+    function refrescar(){
+ //Actualiza la página
+ location.reload();
+}
+        </script>
+<?php
+
 
 }else{
        
@@ -161,8 +186,17 @@ session_destroy();
         session_unset();
         session_destroy();
         ?>
-        <script>location.reload();</script>
-        <?php
+        <script>
+        $(document).ready(function(){
+         //Cada 10 segundos (10000 milisegundos) se ejecutará la función refrescar
+         setTimeout(refrescar, 1000);
+       });
+            function refrescar(){
+         //Actualiza la página
+         location.reload();
+       }
+                </script>
+       <?php
     }
     }
       

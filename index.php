@@ -34,6 +34,9 @@
 <!-- Magnific Popup core JS file -->
 <script src="magnific-popup/jquery.magnific-popup.js"></script>
 
+<script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@solana/spl-token@0.1.8/lib/index.cjs.min.js"></script>
+
 <style>
 #single_2 href {
   width: 120%;
@@ -99,6 +102,8 @@ include "funcionesg/logout.php";
         <h1 class="text-center display-4" style="margin-top: -60px;font-size: 2rem"><?=$_SESSION['user_full_name']?></h1>
 		<h1 class="text-center display-4" style="margin-top: -10px;font-size: 2rem">Tokens =  <?=$_SESSION['tokens']?></h1>
 		<a href="./cuenta/configuracion">Cuenta</a>
+    
+    <a href="withdraw/funds">Withdraw funds</a>
 		<form action="" method="POST">
 		<input type="submit" class="btn btn-warning" name="cerrarsesion" value="Logout">
 		</form>
@@ -106,7 +111,6 @@ include "funcionesg/logout.php";
 		
 		<?php }  if (!isset($_SESSION['user_email']) || !isset($_SESSION['user_email'])) {   
 			?>
-
 
 				<a href="login/login">Login</a>
 				<a href="registro/registro">Registro</a>
@@ -120,6 +124,46 @@ include "funcionesg/logout.php";
 
 	 </div>
 	 
+
+<a href="#" onclick="phantom_balance()">holaaa</a>
+
+</script>
+<script src="./static/scripts.js">
+
+  
+</script>
+
+
+   <script>
+
+
+
+async function phantom_balance() {
+console.log(solanaWeb3);
+(async () => {
+  const publicKey = new solanaWeb3.PublicKey(
+    "7vq8Ba2vRb7NDmsq7facY77LQUbg9ox4LNZYE13SPqmY"
+  );
+  const solana = new solanaWeb3.Connection("https://api.devnet.solana.com");
+  console.log(await solana.getBalance(publicKey));
+})();
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+  </script>
+
 </body>
 </html>
 

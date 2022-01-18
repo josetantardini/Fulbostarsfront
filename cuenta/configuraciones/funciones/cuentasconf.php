@@ -36,6 +36,18 @@
 
         if($result == true){
             echo "<p class='alert alert-success'>La contraseña fue cambiada correctamente</p>";
+            ?>
+            <script>
+            $(document).ready(function(){
+             //Cada 10 segundos (10000 milisegundos) se ejecutará la función refrescar
+             setTimeout(refrescar, 3000);
+           });
+                function refrescar(){
+             //Actualiza la página
+             location.reload();
+           }
+                    </script>
+           <?php
         }
         elseif($result == false){
             echo "<p class='alert alert-danger'>La contraseña actual ingresada no es correcta</p>";
@@ -151,6 +163,18 @@ if(isset($_POST['codenv'])){
            unset($_SESSION['codigo']);
            unset($_SESSION['newmobile']);
            unset($_SESSION['cont']);
+           ?>
+           <script>
+           $(document).ready(function(){
+            //Cada 10 segundos (10000 milisegundos) se ejecutará la función refrescar
+            setTimeout(refrescar, 3000);
+          });
+               function refrescar(){
+            //Actualiza la página
+            location.reload();
+          }
+                   </script>
+          <?php
             
   
         }
@@ -292,45 +316,6 @@ if(isset($_POST['keyenv'])){
 
 
 
-//camisetas
-if(isset($_POST['camiseta'])){
-    $camiseta= htmlspecialchars($_POST['camiseta']);
-
-
-    $data = array(
-             'accion' => 'updatecamiseta',
-             'data' => 
-             array('user' => $_SESSION['user_email'],
-             'camiseta' => htmlspecialchars($camiseta)           
-             )
-         );
-     //	echo var_dump($data);			
-         $result = conectarserver($data);
- 
- 
-         if($result == true){
-             echo "<p class='alert alert-success'>Camiseta actualizada con exito</p>";
-
-             $_SESSION['camiseta'] = $camiseta;
-            
-             ?>
-             <script>$('#closecamiseta').on('click', function() {
-    $('#content').load('./configuraciones/team.php');
-
-})</script>
-             
-             <?php
-             
-            
-         }
-         elseif($result == false){
-             echo "<p class='alert alert-danger'>Error desconocido</p>";
-         }
-
-}
-
-
-
 //avatar
 if(isset($_POST['avatar'])){
    
@@ -412,51 +397,6 @@ if(isset($_POST['teamenv'])){
 }
 
 
-
-
-
-
-
-
-//escudos
-
-if(isset($_POST['escudo'])){
-   
-
-    $escudo= htmlspecialchars($_POST['escudo']);
-
-
-    $data = array(
-             'accion' => 'updateescudo',
-             'data' => 
-             array('user' => $_SESSION['user_email'],
-             'escudo' => htmlspecialchars($escudo)           
-             )
-         );
-     //	echo var_dump($data);			
-         $result = conectarserver($data);
- 
- 
-         if($result == true){
-             echo "<p class='alert alert-success'>Escudo actualizado con exito</p>";
-
-             $_SESSION['escudo'] = $escudo;
-            
-             ?>
-             <script>$('#closeescudo').on('click', function() {
-    $('#content').load('./configuraciones/team.php');
-
-})</script>
-             
-             <?php
-             
-            
-         }
-         elseif($result == false){
-             echo "<p class='alert alert-danger'>Error desconocido</p>";
-         }
-    
-}
 
 
 

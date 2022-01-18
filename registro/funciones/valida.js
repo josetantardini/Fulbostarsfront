@@ -12,13 +12,22 @@ $(document).ready(function() {
         var rpassword = $('#rpassword').val();
         var billetera = $('#billetera').val();
         var isChecked = document.getElementById('acept').checked;
+        var isCheckedsuscribe = document.getElementById('suscribe').checked;
+
+        if (isCheckedsuscribe) {
+            var suscribe = 1;
+        } else {
+            var suscribe = 0;
+        }
+
+
         if (isChecked) {
             var acept = 1;
         } else {
             var acept = 0;
         }
 
-        var suscribe = $('#suscribe').val();
+
         var email = $('#email').val();
 
 

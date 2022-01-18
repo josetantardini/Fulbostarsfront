@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password</title>
+    <title>Fulbostars-Withdraw</title>
+    <link rel="stylesheet" href="./style.css">
        <!-- Fuentes -->
        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
@@ -23,7 +24,7 @@
 </head>
 <body>
 <?php
-include "../../funcionesg/sesion.php";
+include "../funcionesg/sesion.php";
 if (isset($_SESSION['user_id']) && isset($_SESSION['user_email']) && $_SESSION['activo'] == 1 ) { 
 
 
@@ -33,22 +34,37 @@ else {
     header("Location: ../../login/login");
  }
 
-?>    
+?>
 
-    <h1>Restablecer password</h1>
-    <input type="passwordant" name="passwordant" id="passwordant" placeholder="Ingrese su anterior password">
-    <input type="password" name="password" id="password" placeholder="New password">
-    <input type="password" name="rpassword" id="rpassword" placeholder="Repeat password">
-    <input type="submit" name="passwordenv" id="passwordenv" value="Enviar">
+<a href="../index">Volver</a>
+ <div class="withdraw">
+ <h1>Withdraw funds</h1>
+
+  <p class="msjpublickey">Public Key</p>
+
+  <div class="contenidorbilletera">
+  <p class="billeterainvisible">**************************<i class="fas fa-eye" id="mostrar"></i></p>
+  <p class="billeteravisible"><?php echo $_SESSION['billetera']; ?><i class="fas fa-eye-slash" id="ocultar"></i></p>
+  </div>
+  <div class="mensaje alert alert-warning">
+  <p>Recuerda revisar que tu public key sea correcta antes de hacer un retiro, si tu public key no es correcta puedes ir a configuracion de cuenta y modificar tu public key</p>
+ 
+</div>
+
+
+<div class="formularioretiro">
+<input type="text" name="monto" id="monto" pattern="[0-9]" onkeypress="return solonumeros(event)" placeholder="Monto de tokens a retirar">
+<input type="submit" class="btn btn-primary" name="retirar" id="retirar" value="Retirar">
+</div>
+
+<div id="result"></div>
+</div>
 
 
 
 
-  
 
 
-    <div id="result"></div>
-    
-<script src="js/enviarpostpass.js"></script>
+<script src="./js/funds.js"></script>
 </body>
 </html>

@@ -149,7 +149,7 @@ left:0%;
 <body>
 <?php
 include "../../funcionesg/sesion.php";
-if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) { 
+if (isset($_SESSION['user_id']) && isset($_SESSION['user_email']) && $_SESSION['activo'] == 1 ) { 
 
 
 
@@ -197,32 +197,6 @@ else {
 <input type="text" name="teamname" id="teamname">
 <input type="submit" value="Save" id="teamenv">
 <div id="resultnameteam"></div>
-<img style="width:100px; border-radius:100px;" src="../escudos/<?php echo $_SESSION['escudo']; ?>" alt="escudo">
-<a onclick="changeescudo()" id="escudo">Change shield?</a>
-
-<div class="container" id="escudocontainer">
-    <h2 class="h2avatar">Seleccione su escudo</h2>
-    
-    <div class="lightbox-gallery">
-       
-       <?php 
-        $cont2 = 0;
-        $total_imagenes2 = count(glob('../../escudos/{*.png}',GLOB_BRACE));
-        for ($i=0; $i < $total_imagenes2 ; $i++) { 
-          $cont2 += 1;
-          ?>
-        <div><img src="../escudos/escudo<?php echo $cont2; ?>.png"  onclick="escudo('escudo<?php echo $cont2; ?>.png')"  alt="escudo"></div>
-       
-   <?php }?>
-      </div>
-
-    <button type="submit" onclick="closechange()" id="closeescudo" class="btn btn-danger closeavatar">Close</button>
-    <div id="resultescudo"></div>  
-</div>
-
-
-
-
 
 </div>
 
@@ -232,30 +206,8 @@ else {
 
 
 
-<div class="avatar" id="avatar">
 
-  
-    <img style="width:100px;" src="../camisetas/<?php echo $_SESSION['camiseta']; ?>" alt="avatar">
 
-    <a onclick="changecamiseta()" id="camiseta">Change shirt?</a>
-
-    <div class="container" id="camisetacontainer">
-    <h2 class="h2avatar">Seleccione su camiseta</h2>
-    <div class="lightbox-gallery">
-        <?php 
-        $cont3 = 0;
-        $total_imagenes3 = count(glob('../../camisetas/{*.png}',GLOB_BRACE));
-        for ($i=0; $i < $total_imagenes3 ; $i++) { 
-          $cont3 += 1;
-          ?>
-        <div><img src="../camisetas/camiseta<?php echo $cont3; ?>.png"  style="box-shadow:0px 0px 0px 0px; border-radius:0px;" onclick="camiseta('camiseta<?php echo $cont3; ?>.png')"  alt="camiseta"></div>
-       
-   <?php }?>
-      </div>
-
-    <button type="submit" onclick="closechange()" id="closecamiseta" class="btn btn-danger closeavatar">Close</button>
-    <div id="resultcamiseta"></div>  
-</div>
 
 
 

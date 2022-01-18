@@ -80,10 +80,17 @@ if(isset($_POST['codenv'])){
                 unset($_SESSION['email']);
                 unset($_SESSION['accessresetpassword']);
                 ?>
-           <script>
-               location.reload();
-           </script>
-           <?php
+                <script>
+                $(document).ready(function(){
+                 //Cada 10 segundos (10000 milisegundos) se ejecutará la función refrescar
+                 setTimeout(refrescar, 3000);
+               });
+                    function refrescar(){
+                 //Actualiza la página
+                 location.reload();
+               }
+                        </script>
+               <?php
             }
 
         }
@@ -98,10 +105,17 @@ if(isset($_POST['codenv'])){
             unset($_SESSION['accessresetpassword']);
             unset($_SESSION['email']);
             ?>
-       <script>
-           location.reload();
-       </script>
-       <?php
+            <script>
+            $(document).ready(function(){
+             //Cada 10 segundos (10000 milisegundos) se ejecutará la función refrescar
+             setTimeout(refrescar, 3000);
+           });
+                function refrescar(){
+             //Actualiza la página
+             location.reload();
+           }
+                    </script>
+           <?php
         }
     }
 }
@@ -124,7 +138,7 @@ if(isset($_SESSION['accessresetpassword'])){
 
 ?>
 
-<input type="text" name="newpassword" id="newpassword" placeholder="Ingrese su Nuevo password ">
+<input type="password" name="newpassword" id="newpassword" placeholder="Ingrese su Nuevo password ">
     <input type="submit" name="newenv" id="newenv" value="Enviar">
 
 <?php 
@@ -171,6 +185,19 @@ if(isset($_POST['newenv']) && isset($_SESSION['accessresetpassword']) ){
                     unset($_SESSION['cont']);
                     unset($_SESSION['email']);
                     unset($_SESSION['accessresetpassword']);
+
+                    ?>
+                    <script>
+                    $(document).ready(function(){
+                     //Cada 10 segundos (10000 milisegundos) se ejecutará la función refrescar
+                     setTimeout(refrescar, 3000);
+                   });
+                        function refrescar(){
+                     //Actualiza la página
+                     location.reload();
+                   }
+                            </script>
+                   <?php
                 }else{
                     echo "<p class='alert alert-danger'>Error desconocido</p>";
                 }

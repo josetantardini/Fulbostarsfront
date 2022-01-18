@@ -35,6 +35,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 			$_SESSION['escudo'] = $result['escudo'];
 			$_SESSION['camiseta'] = $result['camiseta'];
 			$_SESSION['teamname'] = $result['teamname'];
+			$_SESSION['billetera'] = $result['billetera'];
 			header("Location: ../index");
 			
 		}else {

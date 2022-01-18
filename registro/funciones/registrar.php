@@ -5,7 +5,7 @@ if(isset($_POST['enviar'])){
   
     
     
-if( $_POST["enviar"] != null && $_POST["password"]!= null && $_POST["email"] != null && $_POST["rpassword"] != null && $_POST["lastname"] != null && $_POST["name"] != null &&  $_POST["billetera"] != null ){
+if( $_POST["enviar"] != null && $_POST["password"]!= null && $_POST["email"] != null && $_POST["rpassword"] != null && $_POST["lastname"] != null && $_POST["name"] != null){
  if($_POST["acept"] == 1){
 
 $password = $_POST['password'];
@@ -20,13 +20,10 @@ $acept = $_POST['acept'];
 $subscribe = $_POST['suscribe'];
 $billetera = $_POST['billetera'];
 
+$total_imagenes = count(glob('../../avatars/{*.png}',GLOB_BRACE));
 
-$navatar = rand(1, 20);
-$ncamiseta = rand(1, 6);
-$nescudo = rand(1, 6);
+$navatar = rand(1, $total_imagenes);
 
-$camiseta = "camiseta".$ncamiseta.".png";
-$escudo = "escudo".$nescudo.".png";
 $avatar = $navatar.".png";
 
 
@@ -81,8 +78,7 @@ $data = array(
     'terms' => htmlspecialchars($acept),
     'billetera' => htmlspecialchars($billetera),
     'avatar' => htmlspecialchars($avatar),
-    'escudo' => htmlspecialchars($escudo),
-    'camiseta' => htmlspecialchars($camiseta)
+ 
     
 
 );
@@ -110,16 +106,18 @@ if(isset($result['error'])){
 }
 
 if(isset($result['codigoemail'])){
+    session_start();
+    unset($_SESSION['codigomobile']);
+    unset($_SESSION['codigoemail']);
 //recibimos los codigos de verificacion del usuario
-$codmail = $result['codigoemail'];
-if(isset($result['codigomobile'])){
-$codmobile = $result['codigomobile'];
-}
+    $codmail = $result['codigoemail'];
+    if(isset($result['codigomobile'])){
+        $codmobile = $result['codigomobile'];
+    }
 
-session_start();
-$_SESSION['codigoemail'] = $codmail;
-if(isset($result['codigomobile'])){
-$_SESSION['codigomobile'] = $codmobile;
+    $_SESSION['codigoemail'] = $codmail;
+    if(isset($result['codigomobile'])){
+        $_SESSION['codigomobile'] = $codmobile;
 }
 $_SESSION['usuario'] = $email;
 $_SESSION['cont'] = 3;
@@ -146,9 +144,3 @@ else{
     echo "<p class='alert alert-danger'>Faltan campos a completar</p>";
 }
 }
-
-
-
-
-
-?>
