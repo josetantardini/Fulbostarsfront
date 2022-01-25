@@ -10,10 +10,9 @@
 function verificausuario($datos){
 
   $usuarios=array(
-    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"j13jñk11j3ñj13ñjsf087a98d98","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
-    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"1912ohj12o4jhokjh2334kj12jk","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
+    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"ASV6snqHHAupgDvqEbySegv4Fc4ZxPb8BEUjdRa1hkVP","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
+    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"7vq8Ba2vRb7NDmsq7facY77LQUbg9ox4LNZYE13SPqmY","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
   );
-  
   
 
   foreach($usuarios as $user){
@@ -30,10 +29,9 @@ function verificausuario($datos){
 
 function updatepassword($datos){
   $usuarios=array(
-    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"j13jñk11j3ñj13ñjsf087a98d98","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
-    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"1912ohj12o4jhokjh2334kj12jk","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
+    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"ASV6snqHHAupgDvqEbySegv4Fc4ZxPb8BEUjdRa1hkVP","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
+    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"7vq8Ba2vRb7NDmsq7facY77LQUbg9ox4LNZYE13SPqmY","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
   );
-  
   
   foreach($usuarios as $user){
  
@@ -56,8 +54,8 @@ function updatepassword($datos){
 
 function updatemobilecodigo($datos){
   $usuarios=array(
-    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"j13jñk11j3ñj13ñjsf087a98d98","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
-    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"1912ohj12o4jhokjh2334kj12jk","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
+    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"ASV6snqHHAupgDvqEbySegv4Fc4ZxPb8BEUjdRa1hkVP","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
+    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"7vq8Ba2vRb7NDmsq7facY77LQUbg9ox4LNZYE13SPqmY","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
   );
   
   foreach($usuarios as $user){
@@ -79,11 +77,9 @@ function updatemobilecodigo($datos){
 function codigoconfirmadomobile($datos){
  
   $usuarios=array(
-    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"j13jñk11j3ñj13ñjsf087a98d98","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
-    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"1912ohj12o4jhokjh2334kj12jk","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
+    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"ASV6snqHHAupgDvqEbySegv4Fc4ZxPb8BEUjdRa1hkVP","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
+    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"7vq8Ba2vRb7NDmsq7facY77LQUbg9ox4LNZYE13SPqmY","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
   );
-  
-  
   
   foreach($usuarios as $user){
  
@@ -103,8 +99,8 @@ function codigoconfirmadomobile($datos){
 
 function updateubicacion($datos){
   $usuarios=array(
-    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"j13jñk11j3ñj13ñjsf087a98d98","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
-    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"1912ohj12o4jhokjh2334kj12jk","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
+    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"ASV6snqHHAupgDvqEbySegv4Fc4ZxPb8BEUjdRa1hkVP","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
+    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"7vq8Ba2vRb7NDmsq7facY77LQUbg9ox4LNZYE13SPqmY","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
   );
   
   foreach($usuarios as $user){
@@ -125,10 +121,9 @@ function updateubicacion($datos){
 
 function resetpassword($datos){
   $usuarios=array(
-    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"j13jñk11j3ñj13ñjsf087a98d98","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
-    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"1912ohj12o4jhokjh2334kj12jk","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
+    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"ASV6snqHHAupgDvqEbySegv4Fc4ZxPb8BEUjdRa1hkVP","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
+    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"7vq8Ba2vRb7NDmsq7facY77LQUbg9ox4LNZYE13SPqmY","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
   );
-  
   
   foreach($usuarios as $user){
     if($datos['user']==$user['user']){
@@ -148,11 +143,9 @@ function resetpassword($datos){
 function resetpasswordfinal($datos){
 
   $usuarios=array(
-    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"j13jñk11j3ñj13ñjsf087a98d98","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
-    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"1912ohj12o4jhokjh2334kj12jk","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
+    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"ASV6snqHHAupgDvqEbySegv4Fc4ZxPb8BEUjdRa1hkVP","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
+    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"7vq8Ba2vRb7NDmsq7facY77LQUbg9ox4LNZYE13SPqmY","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
   );
-  
-  
   foreach($usuarios as $user){
     if($datos['user']==$user['user']){
       if($datos['user'] != null && $datos['password'] != null){
@@ -177,10 +170,9 @@ function resetpasswordfinal($datos){
 
 function updatepublickey($datos){
   $usuarios=array(
-    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"j13jñk11j3ñj13ñjsf087a98d98","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
-    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"1912ohj12o4jhokjh2334kj12jk","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
+    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"ASV6snqHHAupgDvqEbySegv4Fc4ZxPb8BEUjdRa1hkVP","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
+    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"7vq8Ba2vRb7NDmsq7facY77LQUbg9ox4LNZYE13SPqmY","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
   );
-  
   
 
   foreach($usuarios as $user){
@@ -208,8 +200,8 @@ function updatepublickey($datos){
 
 function updateavatar($datos){
   $usuarios=array(
-    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"j13jñk11j3ñj13ñjsf087a98d98","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
-    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"1912ohj12o4jhokjh2334kj12jk","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
+    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"ASV6snqHHAupgDvqEbySegv4Fc4ZxPb8BEUjdRa1hkVP","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
+    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"7vq8Ba2vRb7NDmsq7facY77LQUbg9ox4LNZYE13SPqmY","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
   );
   
   
@@ -237,11 +229,9 @@ function updateavatar($datos){
 
 function updateteamname($datos){
   $usuarios=array(
-    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"j13jñk11j3ñj13ñjsf087a98d98","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
-    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"1912ohj12o4jhokjh2334kj12jk","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
+    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"ASV6snqHHAupgDvqEbySegv4Fc4ZxPb8BEUjdRa1hkVP","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
+    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"7vq8Ba2vRb7NDmsq7facY77LQUbg9ox4LNZYE13SPqmY","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
   );
-  
-  
   foreach($usuarios as $user){
     if($datos['user']==$user['user']){
       if($datos['user'] != null && $datos['teamname'] != null){
@@ -264,22 +254,22 @@ function updateteamname($datos){
 
 function retirarfulbo($datos){
   $usuarios=array(
-    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"j13jñk11j3ñj13ñjsf087a98d98","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
-    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"1912ohj12o4jhokjh2334kj12jk","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
+    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"ASV6snqHHAupgDvqEbySegv4Fc4ZxPb8BEUjdRa1hkVP","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
+    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"7vq8Ba2vRb7NDmsq7facY77LQUbg9ox4LNZYE13SPqmY","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
   );
-
   
   foreach($usuarios as $user){
  
     if($datos['user']==$user['user']){
       if($datos['monto'] != null){
-        //codigo que genera el servidor y envia email al usuario para confirmar el cambio
+        //codigo que genera el servidor y envia email al usuario para confirmar el retiro
         return "612412";
-      }else{ return false;}
-    }else{
-      return false;
-    } 
+      }
+    }
+   
+    
 }
+return false;
      
 
 
@@ -287,23 +277,41 @@ function retirarfulbo($datos){
 
 function codigoconfirmadomonto($datos){
   $usuarios=array(
-    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"j13jñk11j3ñj13ñjsf087a98d98","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
-    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"1912ohj12o4jhokjh2334kj12jk","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
+    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"ASV6snqHHAupgDvqEbySegv4Fc4ZxPb8BEUjdRa1hkVP","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
+    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"7vq8Ba2vRb7NDmsq7facY77LQUbg9ox4LNZYE13SPqmY","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
   );
-
   foreach($usuarios as $user){
  
     if($datos['user']==$user['user']){
-        //el servidor devuelve true o false segun si el codigo es correcto o no, de igualmanera el codigo es validado desde la parte de la interfaz tambien
+        //el servidor devuelve true o false segun si el codigo es correcto o no, le retira los tokens a la wallet del usuario la cual esta almacenada en la bd
       return true;
-    }else{
-      return false;
+    }
+ 
+   
+}     return false;
+
+
+}
+
+
+function ingresartokens($datos){
+  $usuarios=array(
+    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"ASV6snqHHAupgDvqEbySegv4Fc4ZxPb8BEUjdRa1hkVP","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
+    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"7vq8Ba2vRb7NDmsq7facY77LQUbg9ox4LNZYE13SPqmY","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
+  );
+
+
+  foreach($usuarios as $user){
+  
+      if($datos['user']==$user['user']){
+       
+        return "612412"; 
+      }   
     } 
-}
+    return "false";
 
 
 }
-
 
 
 
@@ -355,6 +363,10 @@ function conectarserver($datos){
   elseif($datos['accion'] == 'codigoconfirmadomonto'){
     return codigoconfirmadomonto($datos['data']);
   }
+  
+  elseif($datos['accion'] == 'ingresartokens'){
+    return ingresartokens($datos['data']);
+  }
 
   
   else{
@@ -362,6 +374,7 @@ function conectarserver($datos){
     return;
   } 
 } 
+
 
 function conectarserverfinal($datos){
   //		echo json_encode($data);

@@ -1,8 +1,9 @@
-#ocultar{
-    visibility:hidden;
+#ocultar {
+    visibility: hidden;
     position: absolute;
     height: 37px;
 }
+
 .contenidorbilletera {
     display: flex;
     justify-content: center;
@@ -18,33 +19,24 @@
 .contenidorbilletera p {
     margin: 10px;
     font-size: 17px;
+}
+
+.contenidorbilletera a {
     text-shadow: 0 0 6px rgb(41, 41, 41);
-   color: transparent;
-   -webkit-user-select: none;
-   -moz-user-select: none;
-   -ms-user-select: none;
-   user-select: none; 
+    color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+}
+
+.contenidorbilletera a:hover {
+    color: transparent;
 }
 
 .billeteravisible {
     color: rgba(59, 59, 59, 0.8);
-    
-}
-
-
-.p{
-    animation: mianimation 2s infinite linear;
-    transition: 2s;
-}
-
-@keyframes mianimation{
-    0%{
-        width: 5px;
-    }
-
-    100%{
-        width: 100px;
-    }
 }
 
 .contenidorbilletera p i {
@@ -55,7 +47,6 @@
     height: 100%;
     color: rgb(0, 75, 187);
     text-shadow: 0 0 0px black;
-
 }
 
 .mensaje {

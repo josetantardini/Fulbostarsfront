@@ -43,11 +43,12 @@ else {
   <p class="msjpublickey">Public Key</p>
 
   <div class="contenidorbilletera">
-  <p class="billeterainvisible">**************************<i class="fas fa-eye" id="mostrar"></i></p>
-  <p class="billeteravisible"><?php echo $_SESSION['billetera']; ?><i class="fas fa-eye-slash" id="ocultar"></i></p>
+
+  <p class="billeteravisible"><?php echo $_SESSION['billetera']; ?><i class="fas fa-eye-slash" id="ocultar"></i><i class="fas fa-eye" id="mostrar"></i></p>
   </div>
   <div class="mensaje alert alert-warning">
-  <p>Recuerda revisar que tu public key sea correcta antes de hacer un retiro, si tu public key no es correcta puedes ir a configuracion de cuenta y modificar tu public key</p>
+  <p>Recuerda revisar que tu public key sea correcta antes de hacer un retiro, si tu public key
+       no es correcta puedes ir a configuracion de cuenta y modificar tu public key. <br> <a class="btn alert-info" href="#">click aqui para aprender mas</a></p>
  
 </div>
 
@@ -59,7 +60,6 @@ else {
 
 <div id="result"></div>
 </div>
-
 
 
 

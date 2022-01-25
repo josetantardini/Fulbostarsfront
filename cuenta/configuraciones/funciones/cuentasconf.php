@@ -284,7 +284,7 @@ if(isset($_POST['keyenv'])){
         if($result != false){
             if($result == true){
                 echo "<p class='alert alert-success'>se a cambiado su public key satisfactoriamente</p>";
-
+                $_SESSION['billetera'] = $publickey;
             }
             else{
                 echo "<p class='alert alert-danger'>Error desconocido</p>";

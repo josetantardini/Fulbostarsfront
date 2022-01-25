@@ -34,9 +34,9 @@
 <!-- Magnific Popup core JS file -->
 <script src="magnific-popup/jquery.magnific-popup.js"></script>
 
+    
 <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@solana/spl-token@0.1.8/lib/index.cjs.min.js"></script>
-
 <style>
 #single_2 href {
   width: 120%;
@@ -104,6 +104,7 @@ include "funcionesg/logout.php";
 		<a href="./cuenta/configuracion">Cuenta</a>
     
     <a href="withdraw/funds">Withdraw funds</a>
+    <a href="./doposit/tokens">Deposit tokens</a>
 		<form action="" method="POST">
 		<input type="submit" class="btn btn-warning" name="cerrarsesion" value="Logout">
 		</form>
@@ -125,44 +126,16 @@ include "funcionesg/logout.php";
 	 </div>
 	 
 
-<a href="#" onclick="phantom_balance()">holaaa</a>
 
-</script>
+
 <script src="./static/scripts.js">
 
   
 </script>
 
 
-   <script>
 
 
-
-async function phantom_balance() {
-console.log(solanaWeb3);
-(async () => {
-  const publicKey = new solanaWeb3.PublicKey(
-    "7vq8Ba2vRb7NDmsq7facY77LQUbg9ox4LNZYE13SPqmY"
-  );
-  const solana = new solanaWeb3.Connection("https://api.devnet.solana.com");
-  console.log(await solana.getBalance(publicKey));
-})();
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-  </script>
 
 </body>
 </html>

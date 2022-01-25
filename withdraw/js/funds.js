@@ -1,16 +1,17 @@
 $("#mostrar").click(function() {
 
-    $(".billeterainvisible").css("display", "none");
-    $(".billeteravisible").css("display", "block");
-
+    $("#mostrar").css("visibility", "hidden");
+    $("#ocultar").css("visibility", "visible");
+    $(".contenidorbilletera p").css("text-shadow", "0 0 0px rgb(41, 41, 41)");
 });
 
 
 
 $("#ocultar").click(function() {
 
-    $(".billeterainvisible").css("display", "block");
-    $(".billeteravisible").css("display", "none");
+    $("#mostrar").css("visibility", "visible");
+    $("#ocultar").css("visibility", "hidden");
+    $(".contenidorbilletera p").css("text-shadow", "0 0 6px rgb(41, 41, 41)");
 
 });
 
@@ -49,7 +50,7 @@ $(document).ready(function() {
 function solonumeros(e) {
     var key = e.keyCode || e.which,
         tecla = String.fromCharCode(key).toLowerCase(),
-        letras = "1234567890",
+        letras = ".,1234567890",
         especiales = [],
         tecla_especial = false;
 
