@@ -105,6 +105,7 @@ include "funcionesg/logout.php";
     
     <a href="withdraw/funds">Withdraw funds</a>
     <a href="./doposit/tokens">Deposit tokens</a>
+    <a href="./convertnft/nft.php">Convert nft</a>
 		<form action="" method="POST">
 		<input type="submit" class="btn btn-warning" name="cerrarsesion" value="Logout">
 		</form>
