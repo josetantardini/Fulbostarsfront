@@ -12,15 +12,15 @@
       
         if($password != $rpassword){
 
-            echo "<p class='alert alert-danger'>Contraseñas distintas</p>";
+            echo "<p class='alert alert-danger'>Passwords do not match</p>";
 
         }
 
         elseif(strlen($password)<8){
-            echo "<p class='alert alert-danger'>La contraseña no puede tener menos de 8 caracteres</p>";
+            echo "<p class='alert alert-danger'>Password must not be less than 8 characters long</p>";
         }
         elseif(preg_match('/[^a-zA-Z\d]/', $password)==0 || preg_match('/\d/', $password)==0 || preg_match('/[A-Z]/', $password)==0 || preg_match('/[a-z]/', $password)==0){
-            echo "<p class='alert alert-danger'>"."La contraseña debe de tener al menos 1 caracter especial, 1 mayuscula, 1 minuscula y 1 caracter especial"."</p>";
+            echo "<p class='alert alert-danger'>"."Password must contain at least 1 special character, 1 upper case letter, 1 lower case letter and 1 special character"."</p>";
         }else{
             
 		$data = array(
@@ -35,7 +35,7 @@
 		$result = conectarserver($data);
 
         if($result == true){
-            echo "<p class='alert alert-success'>La contraseña fue cambiada correctamente</p>";
+            echo "<p class='alert alert-success'>The password was successfully changed</p>";
             ?>
             <script>
             $(document).ready(function(){
@@ -50,14 +50,14 @@
            <?php
         }
         elseif($result == false){
-            echo "<p class='alert alert-danger'>La contraseña actual ingresada no es correcta</p>";
+            echo "<p class='alert alert-danger'>The password you entered is not correct</p>";
         }
      
         }
 
         
     }else{
-        echo "<p class='alert alert-danger'>Faltan campos a completar</p>";
+        echo "<p class='alert alert-danger'>Missing fields to fill in</p>";
     }
 
         
@@ -77,7 +77,7 @@ if(isset($_POST['mobileenv'])){
         $mobile =  htmlspecialchars($_POST['mobile']);
     
         if(strlen($mobile)<8){
-            echo "<p class='alert alert-danger'>El numero de celular no puede tener menos de 8 digitos</p>";
+            echo "<p class='alert alert-danger'>The mobile number must not have less than 8 digits</p>";
             unset($_SESSION['codigo']);
             unset($_SESSION['newmobile']);
             unset($_SESSION['cont']);
@@ -94,7 +94,7 @@ if(isset($_POST['mobileenv'])){
 		$result = conectarserver($data);
         if($result != false){
             if($result != null){
-                echo "<p class='alert alert-success'>Se a enviado un codigo a su mobile</p>";
+                echo "<p class='alert alert-success'>A code has been sent to your cell phone</p>";
                 $_SESSION['codigo'] = $result;
                 $_SESSION['newmobile'] = $mobile;
                 $_SESSION['cont']=3;
@@ -106,7 +106,7 @@ if(isset($_POST['mobileenv'])){
                 unset($_SESSION['cont']);
             }
         }else{
-            echo "<p class='alert alert-danger'>Error numero no valido</p>";
+            echo "<p class='alert alert-danger'>Invalid number error</p>";
             unset($_SESSION['codigo']);
             unset($_SESSION['newmobile']);
             unset($_SESSION['cont']);
@@ -114,7 +114,7 @@ if(isset($_POST['mobileenv'])){
     }
 }
     else{
-        echo "<p class='alert alert-danger'>No se ingreso ningun numero</p>";
+        echo "<p class='alert alert-danger'>No number entered</p>";
         unset($_SESSION['codigo']);
         unset($_SESSION['newmobile']);
         unset($_SESSION['cont']);
@@ -136,7 +136,7 @@ if(isset($_POST['mobileenv'])){
 if (isset($_SESSION['codigo'])) { 
 
 ?>
-<input type="text" name="codigomob" id="codigomob" placeholder="Ingrese su codigo ">
+<input type="text" name="codigomob" id="codigomob" placeholder="Enter your code ">
     <input type="submit" name="codenv" id="codenv" value="Enviar">
 
 <?php 
@@ -159,7 +159,7 @@ if(isset($_POST['codenv'])){
 		$result = conectarserver($data);
 
         if($result == true){
-            echo  "<p class='alert alert-success'>Numero cambiado satisfactoriamente</p>";
+            echo  "<p class='alert alert-success'>Number changed successfully</p>";
            unset($_SESSION['codigo']);
            unset($_SESSION['newmobile']);
            unset($_SESSION['cont']);
@@ -182,7 +182,7 @@ if(isset($_POST['codenv'])){
 
         }else{
             $_SESSION['cont'] = $_SESSION['cont'] - 1;
-            echo "<p class='alert alert-danger'>Codigo erroneo, quedan ".$_SESSION['cont']." intentos</p>";
+            echo "<p class='alert alert-danger'>Wrong code, you have ".$_SESSION['cont']." attempts left</p>";
             if($_SESSION['cont'] <= 0){
                 unset($_SESSION['codigo']);
                 unset($_SESSION['newmobile']);
@@ -199,7 +199,7 @@ if(isset($_POST['codenv'])){
 
     }else{
         $_SESSION['cont'] = $_SESSION['cont'] - 1;
-        echo "<p class='alert alert-danger'>Codigo erroneo, quedan ".$_SESSION['cont']." intentos</p>";
+        echo "<p class='alert alert-danger'>Wrong code, you have ".$_SESSION['cont']." attempts left</p>";
         if($_SESSION['cont'] <= 0){
             unset($_SESSION['codigo']);
             unset($_SESSION['newmobile']);
@@ -241,22 +241,22 @@ if(isset($_POST['ubienv'])){
         
         if($result != false){
             if($result == true){
-                echo "<p class='alert alert-success'>Ubicacion modificada</p>";
+                echo "<p class='alert alert-success'>Changed location</p>";
 
             }
             else{
-                echo "<p class='alert alert-danger'>Error desconocido</p>";
+                echo "<p class='alert alert-danger'>Unknown error</p>";
        
             }
         }else{
-            echo "<p class='alert alert-danger'>Error ubicacion no valida</p>";
+            echo "<p class='alert alert-danger'>Error: Invalid location</p>";
   
         }
 
 
 
     }else{
-        echo "<p class='alert alert-danger'>Faltan campos a completar</p>"; 
+        echo "<p class='alert alert-danger'>Missing fields to fill in</p>"; 
     }
 
 
@@ -283,15 +283,15 @@ if(isset($_POST['keyenv'])){
 
         if($result != false){
             if($result == true){
-                echo "<p class='alert alert-success'>se a cambiado su public key satisfactoriamente</p>";
+                echo "<p class='alert alert-success'>Your public key has been successfully changed</p>";
                 $_SESSION['billetera'] = $publickey;
             }
             else{
-                echo "<p class='alert alert-danger'>Error desconocido</p>";
+                echo "<p class='alert alert-danger'>Unknown error</p>";
        
             }
         }else{
-            echo "<p class='alert alert-danger'>Error public key no valido</p>";
+            echo "<p class='alert alert-danger'>Invalid public key error</p>";
   
         }
 
@@ -301,7 +301,7 @@ if(isset($_POST['keyenv'])){
 
 
     }else{
-        echo "<p class='alert alert-danger'>Faltan campos a completar</p>";
+        echo "<p class='alert alert-danger'>Missing fields to complete</p>";
     }
 
 
@@ -335,7 +335,7 @@ if(isset($_POST['avatar'])){
  
  
          if($result == true){
-             echo "<p class='alert alert-success'>Avatar actualizado con exito</p>";
+             echo "<p class='alert alert-success'>Avatar successfully updated</p>";
 
              $_SESSION['avatar'] = $avatar;
             
@@ -350,7 +350,7 @@ if(isset($_POST['avatar'])){
             
          }
          elseif($result == false){
-             echo "<p class='alert alert-danger'>Error desconocido</p>";
+             echo "<p class='alert alert-danger'>Unknown error</p>";
          }
     
 }
@@ -379,20 +379,20 @@ if(isset($_POST['teamenv'])){
 
 
         if($result == true){
-            echo "<p class='alert alert-success'>Team name actualizado con exito</p>";
+            echo "<p class='alert alert-success'>Team name successfully updated</p>";
 
             $_SESSION['teamname'] = $teamname;
            
         }
         elseif($result == false){
-            echo "<p class='alert alert-danger'>Error desconocido</p>";
+            echo "<p class='alert alert-danger'>Unknown error</p>";
         }
 
 
 
     }
     else{
-        echo "<p class='alert alert-danger'>Faltan campos a completar</p>";
+        echo "<p class='alert alert-danger'>Missing fields to fill</p>";
     }
 }
 

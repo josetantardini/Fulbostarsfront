@@ -36,10 +36,10 @@ else {
 ?>    
 
     <h1>Restablecer password</h1>
-    <input type="passwordant" name="passwordant" id="passwordant" placeholder="Ingrese su anterior password">
+    <input type="passwordant" name="passwordant" id="passwordant" placeholder="Enter your old password">
     <input type="password" name="password" id="password" placeholder="New password">
     <input type="password" name="rpassword" id="rpassword" placeholder="Repeat password">
-    <input type="submit" name="passwordenv" id="passwordenv" value="Enviar">
+    <input type="submit" name="passwordenv" id="passwordenv" value="Send">
 
 
 

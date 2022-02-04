@@ -167,7 +167,7 @@ else {
     <a onclick="changeavatar()" id="avatar">Change Avatar?</a>
 
     <div class="container" id="avatarcontainer">
-    <h2 class="h2avatar">Seleccione su avatar</h2>
+    <h2 class="h2avatar">Choose your avatar</h2>
     <div class="lightbox-gallery">
         <?php 
         $cont = 0;

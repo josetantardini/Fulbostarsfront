@@ -27,9 +27,17 @@
     <?php
         session_start();
 
+if(isset($_SESSION['codigoemail']) && isset($_SESSION['codigomobile'])){
+    echo "<p class='alert alert-success'>We sent an email and SMS to confirm your details. </p>";
+}
+if(isset($_SESSION['codigoemail']) && isset($_SESSION['codigomobile'])==0){
+    echo "<p class='alert alert-success'>We sent an email to confirm your details. </p>";
+}
+
+
         if(isset($_SESSION['codigoemail']) && isset($_SESSION['usuario'])){
            
-            echo "<p class='alert alert-success'>Se te envio un email y un sms para validar tus datos </p>";
+        
 
             $bandera = 1;
         
@@ -37,14 +45,14 @@
 ?>
 
 
-    <input type="text" name="codigoemail" id="codigoemail" placeholder="Ingrese codigo de email" id="">
+    <input type="text" name="codigoemail" id="codigoemail" placeholder="Enter email code" id="">
 
     <?php   if(isset($_SESSION['codigomobile'])){  $bandera = 0;  ?>
 
-    <input type="text" name="codigomobile" id="codigomobile" placeholder="Ingrese codigo de mobile" id="">
+    <input type="text" name="codigomobile" id="codigomobile" placeholder="Enter mobile code" id="">
     <?php } ?>
 
-    <input type="submit" value="Enviar" id="enviarcod" name="enviarcod">
+    <input type="submit" value="Send" id="enviarcod" name="enviarcod">
 
     <?php
         }
@@ -78,7 +86,7 @@ $codigoRespuesta = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 if($codigoRespuesta === 200){
     
 
-    echo "<p class='alert alert-success'>Felicidades su cuenta ha sido activada correctamente</p>";
+    echo "<p class='alert alert-success'>Congratulations, your account has been successfully activated!</p>";
 
 }
 curl_close($ch);
@@ -126,7 +134,7 @@ $codigoRespuesta = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 if($codigoRespuesta === 200){
     
 
-    echo "<p class='alert alert-success'>Felicidades su cuenta ha sido activada correctamente</p>";
+    echo "<p class='alert alert-success'>Congratulations, your account has been successfully activated!</p>";
 
 
 
@@ -151,7 +159,7 @@ $(document).ready(function(){
 }else{
        
         $_SESSION['cont'] = $_SESSION['cont'] - 1;
-        echo "<p class='alert alert-warning'>Error codigo incorrecto unicamente tiene ".$_SESSION['cont']." intentos</p>";
+        echo "<p class='alert alert-warning'>Wrong code, you have ".$_SESSION['cont']." more attempts</p>";
  if($_SESSION['cont'] == 0){
 
      

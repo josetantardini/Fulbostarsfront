@@ -63,14 +63,14 @@ public();
   <p  class="billeteravisible"><a style="  text-decoration: none;" id="billetera"></a><i class="fas fa-eye-slash" id="ocultar"></i><i class="fas fa-eye" id="mostrar"></i></p>
   </div>
   <div class="mensaje alert alert-warning">
-  <p>Esta es la public key de tu billetera virtual, recuerda verificar que la billetera sea la correspondiente para depositar tus tokens en tu cuenta de Fulbostars. <a class="btn alert-info" href="#">click aqui para aprender mas</a></p>
+  <p>This is the public key of your virtual wallet. Do not forget to make sure it's the right address to deposit your tokens to your Fulbo Stars account. <a class="btn alert-info" href="#">Click here to learn more</a></p>
  
 </div>
 
 
 <div class="formularioretiro">
-<input type="text" name="monto" id="monto" pattern="[0-9]" onkeypress="return solonumeros(event)" placeholder="Monto de tokens a ingresar">
-<input type="submit" class="btn btn-primary" name="ingresar" onclick="phantom_balance()" id="ingresar" value="Ingresar">
+<input type="text" name="monto" id="monto" pattern="[0-9]" onkeypress="return solonumeros(event)" placeholder="Amount of tokens to deposit">
+<input type="submit" class="btn btn-primary" name="ingresar" onclick="phantom_balance()" id="ingresar" value="Add tokens">
 </div>
 
 <div id="result"></div>

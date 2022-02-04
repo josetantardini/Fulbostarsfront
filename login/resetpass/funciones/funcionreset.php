@@ -8,7 +8,7 @@
 
             $email = $_POST['email'];
             if (strpos($email,"@")==0 || strpos($email,".")==0 ) {
-                echo "<p class='alert alert-danger'>"."No coincide con un Email ejemplo: gergino@hotmail.com."."</p>";
+                echo "<p class='alert alert-danger'>"."Does not match required email format, missing '@' sign."."</p>";
             }else{
                 $data = array(
                     'accion' => 'resetpassword',
@@ -21,7 +21,7 @@
                 $result = conectarserver($data);
                 if($result != false){
                     if($result != null){
-                        echo "<p class='alert alert-success'>Se a enviado un codigo a su email</p>";
+                        echo "<p class='alert alert-success'>A code was sent to your email</p>";
                         $_SESSION['codigoservidor'] = $result;
                         $_SESSION['cont']=3;
                         $_SESSION['email']=$email;
@@ -35,7 +35,7 @@
                         unset($_SESSION['email']);
                     }
                 }else{
-                    echo "<p class='alert alert-danger'>Error email no valido</p>";
+                    echo "<p class='alert alert-danger'>Error: Invalid email</p>";
                     unset($_SESSION['codigoservidor']);
                     unset($_SESSION['cont']);
                     unset($_SESSION['accessresetpassword']);
@@ -44,7 +44,7 @@
             }
 
         }else{
-            echo "<p class='alert alert-danger'> Faltan campos a completar </p>";
+            echo "<p class='alert alert-danger'> Missing fields to fill in </p>";
         }
 
 
@@ -56,7 +56,7 @@
     if (isset($_SESSION['codigoservidor'])) { 
 
         ?>
-        <input type="text" name="codigoemail" id="codigoemail" placeholder="Ingrese su codigo ">
+        <input type="text" name="codigoemail" id="codigoemail" placeholder="Enter your code">
             <input type="submit" name="codenv" id="codenv" value="Enviar">
         
         <?php 
@@ -73,7 +73,7 @@ if(isset($_POST['codenv'])){
 
         }else{
             $_SESSION['cont'] = $_SESSION['cont'] - 1;
-            echo "<p class='alert alert-danger'>Codigo erroneo, quedan ".$_SESSION['cont']." intentos</p>";
+            echo "<p class='alert alert-danger'>Wrong code, you have ".$_SESSION['cont']." more attempts</p>";
             if($_SESSION['cont'] <= 0){
                 unset($_SESSION['codigoservidor']);
                 unset($_SESSION['cont']); 
@@ -98,7 +98,7 @@ if(isset($_POST['codenv'])){
 
     }else{
         $_SESSION['cont'] = $_SESSION['cont'] - 1;
-        echo "<p class='alert alert-danger'>Codigo erroneo, quedan ".$_SESSION['cont']." intentos</p>";
+        echo "<p class='alert alert-danger'>Wrong code, you have ".$_SESSION['cont']." more attempts</p>";
         if($_SESSION['cont'] <= 0){
             unset($_SESSION['codigoservidor']);
             unset($_SESSION['cont']); 
@@ -138,8 +138,8 @@ if(isset($_SESSION['accessresetpassword'])){
 
 ?>
 
-<input type="password" name="newpassword" id="newpassword" placeholder="Ingrese su Nuevo password ">
-    <input type="submit" name="newenv" id="newenv" value="Enviar">
+<input type="password" name="newpassword" id="newpassword" placeholder="Enter your new password ">
+    <input type="submit" name="newenv" id="newenv" value="Send">
 
 <?php 
 ?>
@@ -162,10 +162,10 @@ if(isset($_POST['newenv']) && isset($_SESSION['accessresetpassword']) ){
         $password = $_POST['newpassword'];
 
         if(strlen($password)<8){
-            echo "<p class='alert alert-danger'>La contraseña no puede tener menos de 8 caracteres</p>";
+            echo "<p class='alert alert-danger'>The password must not be less than 8 characters long</p>";
         }
         elseif(preg_match('/[^a-zA-Z\d]/', $password)==0 || preg_match('/\d/', $password)==0 || preg_match('/[A-Z]/', $password)==0 || preg_match('/[a-z]/', $password)==0){
-            echo "<p class='alert alert-danger'>"."La contraseña debe de tener al menos 1 caracter especial, 1 mayuscula, 1 minuscula y 1 caracter especial"."</p>";
+            echo "<p class='alert alert-danger'>"."The password must contain at least 1 special character, 1 uppercase letter, 1 lowercase letter and 1 special character."."</p>";
         }else{
            
             $data = array(
@@ -180,7 +180,7 @@ if(isset($_POST['newenv']) && isset($_SESSION['accessresetpassword']) ){
             $result = conectarserver($data);
             if($result != false){
                 if($result != null){
-                    echo "<p class='alert alert-success'>Se a cambiado su password</p>";
+                    echo "<p class='alert alert-success'>Your password has been changed</p>";
                     unset($_SESSION['codigoservidor']);
                     unset($_SESSION['cont']);
                     unset($_SESSION['email']);
@@ -199,13 +199,13 @@ if(isset($_POST['newenv']) && isset($_SESSION['accessresetpassword']) ){
                             </script>
                    <?php
                 }else{
-                    echo "<p class='alert alert-danger'>Error desconocido</p>";
+                    echo "<p class='alert alert-danger'>Error: unknown</p>";
                 }
            
 
 
         }else{
-            echo "<p class='alert alert-danger'>Error desconocido</p>";
+            echo "<p class='alert alert-danger'>Error: unknown</p>";
         }
 
 
@@ -213,7 +213,7 @@ if(isset($_POST['newenv']) && isset($_SESSION['accessresetpassword']) ){
 
         }
     } else{
-        echo "<p class='alert alert-danger'> Faltan campos a completar </p>";
+        echo "<p class='alert alert-danger'> Missing fields to fill in </p>";
     }   
 
 }

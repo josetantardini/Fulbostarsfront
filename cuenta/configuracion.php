@@ -37,11 +37,11 @@ else {
 ?>
 
     <a href="../index">Home</a>
-    <a id="boton">Cambiar password</a>
-    <a id="boton2">Camibar mobile</a>
-    <a id="boton3">Camibar ubicacion</a>
-    <a id="boton4">Cambiar public key</a>
-    <a id="boton5">Actualizar datos de team</a>
+    <a id="boton">Change password</a>
+    <a id="boton2">Change mobile</a>
+    <a id="boton3">Change location</a>
+    <a id="boton4">Change public key</a>
+    <a id="boton5">Update team data</a>
 
     <div id="content"></div>
     <div id="result"></div>

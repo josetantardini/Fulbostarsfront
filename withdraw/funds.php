@@ -47,15 +47,14 @@ else {
   <p class="billeteravisible"><?php echo $_SESSION['billetera']; ?><i class="fas fa-eye-slash" id="ocultar"></i><i class="fas fa-eye" id="mostrar"></i></p>
   </div>
   <div class="mensaje alert alert-warning">
-  <p>Recuerda revisar que tu public key sea correcta antes de hacer un retiro, si tu public key
-       no es correcta puedes ir a configuracion de cuenta y modificar tu public key. <br> <a class="btn alert-info" href="#">click aqui para aprender mas</a></p>
+  <p>Remember to verify that your public key is correct before making a withdrawal. If your public key is not correct, you can go to the account settings and change your public key. <br> <a class="btn alert-info" href="#">Click here to learn more</a></p>
  
 </div>
 
 
 <div class="formularioretiro">
-<input type="text" name="monto" id="monto" pattern="[0-9]" onkeypress="return solonumeros(event)" placeholder="Monto de tokens a retirar">
-<input type="submit" class="btn btn-primary" name="retirar" id="retirar" value="Retirar">
+<input type="text" name="monto" id="monto" pattern="[0-9]" onkeypress="return solonumeros(event)" placeholder="Number of tokens to withdraw">
+<input type="submit" class="btn btn-primary" name="retirar" id="retirar" value="Withdraw">
 </div>
 
 <div id="result"></div>

@@ -35,11 +35,11 @@ else {
 
 ?>    
 
-    <h1>Actualizar public key</h1>
+    <h1>Update public key</h1>
     
-    <input type="text" name="publickey" id="publickey" placeholder="Ingrese su public key">
-    <input type="submit" name="key" id="key" onclick="conectarwallet()" value="Obtener public key">
-    <input type="submit" name="keyenv" id="keyenv" value="Actualizar">
+    <input type="text" name="publickey" id="publickey" placeholder="Enter your public key">
+    <input type="submit" name="key" id="key" onclick="conectarwallet()" value="Get public key">
+    <input type="submit" name="keyenv" id="keyenv" value="update">
 
 
 
@@ -60,7 +60,7 @@ else {
                 document.getElementById("publickey").setAttribute("value",resp.publicKey.toString());
             } catch (err) 
             {
-                alert("No se pudo conectar con la billetera Phantom");
+                alert("Could not connect to Phantom wallet");
             }   
         }
         else

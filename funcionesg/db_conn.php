@@ -325,6 +325,7 @@ function convertiranft($datos){
   
     if($datos['user']==$user['user']){
      //habria que validar que el id del personaje exista y sea correcto, si esta todo ok se realiza la transaccion
+          // ademas habria que revisar que el mismo lo tiene o si no lo tiene ya
       return true; 
     }   
   } 
@@ -332,6 +333,30 @@ function convertiranft($datos){
 
 
 }
+
+
+function buyitem($datos){
+  $usuarios=array(
+    array("user"=>"jose@gmail.com","password"=>"1234","datos"=>array("id"=>"1","nombre"=>"Jose","avatar" => "1.png","teamname" => "turraca","billetera" =>"ASV6snqHHAupgDvqEbySegv4Fc4ZxPb8BEUjdRa1hkVP","activo"=>"1","apellido"=>"tantardini","city"=>"longchamps","country"=>"argentina","tokens"=>"100","mobile"=>"+541127924947")),
+    array("user"=>"luis@gmail.com","password"=>"1233","datos"=>array("id"=>"2","nombre"=>"Luis","avatar" => "2.png","teamname" => "fulbito","billetera" =>"7vq8Ba2vRb7NDmsq7facY77LQUbg9ox4LNZYE13SPqmY","activo"=>"1","apellido"=>"divina","city"=>"villa 31","country"=>"paraguay","tokens"=>"200","mobile"=>"+541128521423"))
+  );
+
+
+
+  
+  foreach($usuarios as $user){
+  
+    if($datos['user']==$user['user']){
+     //habria que validar que el id del item exista y sea correcto, si esta todo ok se realiza la transaccion
+     // ademas habria que revisar que el mismo lo tiene o si no lo tiene ya
+      return true; 
+    }   
+  } 
+  return "false";
+
+
+}
+
 
 
 
@@ -391,6 +416,10 @@ function conectarserver($datos){
   elseif($datos['accion'] == 'convertiranft'){
     return convertiranft($datos['data']);
   }
+  elseif($datos['accion'] == 'buyitem'){
+    return buyitem($datos['data']);
+  }
+  
   
   else{
     echo "accion desconocida";

@@ -39,7 +39,7 @@ else {
     <h1>Update mobile</h1>
     <p>Previus mobile: ****<?php echo substr($_SESSION['mobile'], 9); ?></p>
     <input type="text" name="mobile" id="mobile" placeholder="New mobile">
-    <input type="submit" name="mobileenv" id="mobileenv" value="Enviar">
+    <input type="submit" name="mobileenv" id="mobileenv" value="Send">
 
 
 

@@ -36,23 +36,23 @@ if(strcmp($mobile,'')==0){
 
 
 if($password != $rpassword){
-    echo "<p class='alert alert-danger'>Las contraseñas no coinciden</p>";
+    echo "<p class='alert alert-danger'>The passwords do not match</p>";
 }
 
 elseif(strlen($password)<8){
-    echo "<p class='alert alert-danger'>La contraseña no puede tener menos de 8 caracteres</p>";
+    echo "<p class='alert alert-danger'>Password must not be less than 8 characters long</p>";
 }
 elseif(preg_match('/[^a-zA-Z\d]/', $password)==0 || preg_match('/\d/', $password)==0 || preg_match('/[A-Z]/', $password)==0 || preg_match('/[a-z]/', $password)==0){
-    echo "<p class='alert alert-danger'>"."La contraseña debe de tener al menos 1 caracter especial, 1 mayuscula, 1 minuscula y 1 caracter especial"."</p>";
+    echo "<p class='alert alert-danger'>"."Password must contain at least 1 special character, 1 upper case letter, 1 lower case letter and 1 special character"."</p>";
 }
 elseif(preg_match('/[^a-zA-Z\d]/', $name)!=0){
-    echo "<p class='alert alert-danger'>Nombre no valido</p>";
+    echo "<p class='alert alert-danger'>Invalid name</p>";
 }
 elseif(preg_match('/[a-z]/', $mobile)!=0 ||  preg_match('/[A-Z]/', $mobile)!=0){
-    echo "<p class='alert alert-danger'>Numero no valido</p>";
+    echo "<p class='alert alert-danger'>Invalid number</p>";
 }
 elseif (strpos($email,"@")==0 || strpos($email,".")==0 ) {
-    echo "<p class='alert alert-danger'>"."No coincide con un Email ejemplo: gergino@hotmail.com."."</p>";
+    echo "<p class='alert alert-danger'>"."Does not match required email format, missing '@' sign."."</p>";
 }
 
 
@@ -136,11 +136,11 @@ curl_close($ch);
 }
 
  }else{
-     echo "<p class='alert alert-danger'>Debe de aceptar los terminos y condiciones</p>";
+     echo "<p class='alert alert-danger'>You must accept the terms and conditions</p>";
  }
 
 }
 else{
-    echo "<p class='alert alert-danger'>Faltan campos a completar</p>";
+    echo "<p class='alert alert-danger'>Missing fields to fill in</p>";
 }
 }

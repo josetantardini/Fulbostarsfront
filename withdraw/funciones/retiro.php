@@ -24,7 +24,7 @@ if(isset($_POST['retirar'])){
 
                 if($result != false){
                     if($result != null){
-                        echo "<p class='alert alert-success'>Se a enviado un codigo a su Email</p>";
+                        echo "<p class='alert alert-success'>A code was sent to your email</p>";
                         $_SESSION['codigomon'] = $result;
                         $_SESSION['monto'] = $monto;
                         $_SESSION['cont']=3;
@@ -35,19 +35,19 @@ if(isset($_POST['retirar'])){
                         unset($_SESSION['cont']);
                     }
                 }else{
-                    echo "<p class='alert alert-danger'>Error monto no valido</p>";
+                    echo "<p class='alert alert-danger'>Invalid amount error</p>";
                     unset($_SESSION['codigomon']);
                     unset($_SESSION['monto']);
                     unset($_SESSION['cont']);
                 }
             }else{
-                echo "<p class='alert alert-danger'>El monto de tokens ingresado no puede ser mayor a tu monto actual de tokens</p>";
+                echo "<p class='alert alert-danger'>The entered amount of tokens cannot be greater than your current amount of tokens</p>";
                 unset($_SESSION['codigomon']);
                 unset($_SESSION['monto']);
                 unset($_SESSION['cont']);
             }
     }else{
-        echo "<p class='alert alert-danger'>No valido</p>";
+        echo "<p class='alert alert-danger'>Invalid</p>";
         unset($_SESSION['codigomon']);
         unset($_SESSION['monto']);
         unset($_SESSION['cont']);
@@ -56,7 +56,7 @@ if(isset($_POST['retirar'])){
         
 
     }else{
-        echo "<p class='alert alert-danger'>Faltan campos a completar</p>";
+        echo "<p class='alert alert-danger'>Missing fields to fill in</p>";
     }
 }
 
@@ -70,8 +70,8 @@ if(isset($_POST['retirar'])){
 if (isset($_SESSION['codigomon'])) { 
 
 ?>
-<input type="text" name="codigomonto" id="codigomonto" placeholder="Ingrese su codigo ">
-    <input type="submit" name="codenvmonto" class="btn btn-primary" id="codenvmonto" value="Enviar">
+<input type="text" name="codigomonto" id="codigomonto" placeholder="Enter your code ">
+    <input type="submit" name="codenvmonto" class="btn btn-primary" id="codenvmonto" value="Send">
 
 <?php 
 }?>
@@ -93,7 +93,7 @@ if(isset($_POST['codenvmonto'])){
 		$result = conectarserver($data);
 
         if($result == true){
-            echo  "<p class='alert alert-success'>Monto retirado a su billetera satisfactoriamente</p>";
+            echo  "<p class='alert alert-success'>Amount successfully withdrawn to your wallet</p>";
            unset($_SESSION['codigomon']);
            unset($_SESSION['monto']);
            unset($_SESSION['cont']);
@@ -115,7 +115,7 @@ if(isset($_POST['codenvmonto'])){
 
         }else{
             $_SESSION['cont'] = $_SESSION['cont'] - 1;
-            echo "<p class='alert alert-danger'>Codigo erroneo, quedan ".$_SESSION['cont']." intentos</p>";
+            echo "<p class='alert alert-danger'>Wrong code, you have ".$_SESSION['cont']." attempts left</p>";
             if($_SESSION['cont'] <= 0){
                 unset($_SESSION['codigomon']);
                 unset($_SESSION['monto']);
@@ -132,7 +132,7 @@ if(isset($_POST['codenvmonto'])){
 
     }else{
         $_SESSION['cont'] = $_SESSION['cont'] - 1;
-        echo "<p class='alert alert-danger'>Codigo erroneo, quedan ".$_SESSION['cont']." intentos</p>";
+        echo "<p class='alert alert-danger'>Wrong code, you have ".$_SESSION['cont']." attempts left</p>";
         if($_SESSION['cont'] <= 0){
             unset($_SESSION['codigomon']);
             unset($_SESSION['monto']);

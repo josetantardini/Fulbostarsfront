@@ -50,7 +50,7 @@ include '../funcionesg/sesion.php';
                 document.getElementById("billetera").setAttribute("value",resp.publicKey.toString());
             } catch (err) 
             {
-                alert("No se pudo conectar con la billetera Phantom");
+                alert("Could not connect to phantom wallet");
             }   
         }
         else
@@ -72,7 +72,7 @@ include '../funcionesg/sesion.php';
                 id="mobile" placeholder="Mobile" />
             <input type="text" name="country" maxlength="100" id="country" placeholder="Country" />
             <input type="text" name="city" maxlength="100" id="city" placeholder="City" />
-            <input type="text" name="billetera" id="billetera" placeholder="Public key de su billetera"/>
+            <input type="text" name="billetera" id="billetera" placeholder="Public key of your wallet"/>
             <input type="button" onclick="conectarwallet()" value="Conectar billetera"/>
             <p>Suscribe to news</p>
             <input type="checkbox" id="suscribe" id="suscribe" name="suscribe" placeholder="Subscribe to News:" />
@@ -85,8 +85,8 @@ include '../funcionesg/sesion.php';
             <p>Aceptar terminos y condiciones</p>
             <input type="checkbox" id="acept" id="acept" name="acept" value="1"
                 placeholder="I accept the terms and conditions:" required />
-            <input type="submit" value="Enviar" id="enviar" name="enviar" class="boton">
-            <p class="message">¿Ya tienes cuenta? <a href="../login/login">Login</a></p>
+            <input type="submit" value="Send" id="enviar" name="enviar" class="boton">
+            <p class="message">Do you already have an account? <a href="../login/login">Login</a></p>
 
             <p id="result"></p>
         </div>

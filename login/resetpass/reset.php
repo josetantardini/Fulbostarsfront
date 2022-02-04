@@ -24,8 +24,8 @@
 <body>
     
     <h1>Reset Password</h1>
-    <input type="text" name="email" id="email" placeholder="Ingrese email">
-    <input type="submit" value="Enviar" id="resetpass">
+    <input type="text" name="email" id="email" placeholder="Enter email">
+    <input type="submit" value="Send" id="resetpass">
 
 
 <div id="result"></div>

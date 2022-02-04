@@ -38,7 +38,7 @@ else {
     <p>Previus Location:</p>
     <input type="text" name="country" id="country" placeholder="New country">
     <input type="text" name="city" id="city" placeholder="New city">
-    <input type="submit" name="ubienv" id="ubienv" value="Enviar">
+    <input type="submit" name="ubienv" id="ubienv" value="Send">
 
     <div id="result"></div>
 

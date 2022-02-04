@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Fulbostars - Home</title>
+	<title>Fulbostars</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
@@ -101,11 +101,13 @@ include "funcionesg/logout.php";
 		<img class="imgavatar" src="./avatars/<?php echo $_SESSION['avatar']; ?>"   alt="avatar">
         <h1 class="text-center display-4" style="margin-top: -60px;font-size: 2rem"><?=$_SESSION['user_full_name']?></h1>
 		<h1 class="text-center display-4" style="margin-top: -10px;font-size: 2rem">Tokens =  <?=$_SESSION['tokens']?></h1>
-		<a href="./cuenta/configuracion">Cuenta</a>
-    
-    <a href="withdraw/funds">Withdraw funds</a>
-    <a href="./doposit/tokens">Deposit tokens</a>
-    <a href="./convertnft/nft.php">Convert nft</a>
+		
+      <a href="./cuenta/configuracion">Cuenta</a>
+      <a href="withdraw/funds">Withdraw funds</a>
+      <a href="./doposit/tokens">Deposit tokens</a>
+      <a href="./convertnft/nft">Convert nft</a>
+      <a href="./items/store">Store</a>
+
 		<form action="" method="POST">
 		<input type="submit" class="btn btn-warning" name="cerrarsesion" value="Logout">
 		</form>
