@@ -27,15 +27,13 @@
     <?php
         session_start();
 
-if(isset($_SESSION['codigoemail']) && isset($_SESSION['codigomobile'])){
-    echo "<p class='alert alert-success'>We sent an email and SMS to confirm your details. </p>";
-}
-if(isset($_SESSION['codigoemail']) && isset($_SESSION['codigomobile'])==0){
+
+if(isset($_SESSION['usuario'])){
     echo "<p class='alert alert-success'>We sent an email to confirm your details. </p>";
 }
 
 
-        if(isset($_SESSION['codigoemail']) && isset($_SESSION['usuario'])){
+        if(isset($_SESSION['usuario'])){
            
         
 
@@ -47,31 +45,42 @@ if(isset($_SESSION['codigoemail']) && isset($_SESSION['codigomobile'])==0){
 
     <input type="text" name="codigoemail" id="codigoemail" placeholder="Enter email code" id="">
 
-    <?php   if(isset($_SESSION['codigomobile'])){  $bandera = 0;  ?>
+   
 
-    <input type="text" name="codigomobile" id="codigomobile" placeholder="Enter mobile code" id="">
-    <?php } ?>
+
 
     <input type="submit" value="Send" id="enviarcod" name="enviarcod">
 
     <?php
         }
+
+
+
 if(isset($_POST['enviarcod'])){
+if($_POST['codigoemail'] != null){
+  $email = $_SESSION['usuario'];
+  $codigo = $_POST['codigoemail'];
+    $firma = "$email,$codigo,C13BECC3544694AF84022CCC5DB3EE30,C13BECC3544694AF84022CCC5DB3EE30";
 
-    if($_POST['codigoemail'] == $_SESSION['codigoemail'] && $bandera=1){
-       
 
         //url de destino
-$url = 'http://localhost:4000';
+$url = '181.44.19.197:3000/api';
 
 //iniciamos curl
 $ch = curl_init($url);
-//datos a enviar
-$data = array(
-    'usuario' => $_SESSION['usuario']
-);
+
 //lo decodificamos a json
-$payload = json_encode(array("successcod" => $data));
+$payload = json_encode(array(
+    'action' => 'ValidateUser',
+    'data' =>  array(
+        'user' => $_SESSION['usuario'],
+        'code' => $_POST['codigoemail']
+ 
+      
+    ),
+    'who' =>'C13BECC3544694AF84022CCC5DB3EE30',
+    'sign' => strtoupper(hash("sha256",$firma))
+   ));
 //parametros de envio
 curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
 
@@ -88,128 +97,29 @@ if($codigoRespuesta === 200){
 
     echo "<p class='alert alert-success'>Congratulations, your account has been successfully activated!</p>";
 
-}
-curl_close($ch);
-session_unset();
-session_destroy();
-?>
-<script>
-$(document).ready(function(){
- //Cada 10 segundos (10000 milisegundos) se ejecutará la función refrescar
- setTimeout(refrescar, 4000);
-});
-    function refrescar(){
- //Actualiza la página
- location.reload();
-}
+    ?>
+
+        <script>
+
+            window.location.replace("https://localhost/fulbostars1/login/login");
+
+
         </script>
-<?php
-
-}else{  //esto que vemos debajo es exactamente lo mismo que arriba pero que en caso contrario de que sea sms y email lo que hay que cargar
-    if($_POST['codigoemail'] == $_SESSION['codigoemail'] && $_POST['codigomobile'] == $_SESSION['codigomobile']){
-       
-
-        //url de destino
-$url = 'http://localhost:4000';
-
-//iniciamos curl
-$ch = curl_init($url);
-//datos a enviar
-$data = array(
-    'usuario' => $_SESSION['usuario']
-);
-//lo decodificamos a json
-$payload = json_encode(array("successcod" => $data));
-//parametros de envio
-curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-
-curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-
-//ejecutamos el post
-$result = curl_exec($ch);
-$codigoRespuesta = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-if($codigoRespuesta === 200){
     
-
-    echo "<p class='alert alert-success'>Congratulations, your account has been successfully activated!</p>";
-
-
-
-}
-curl_close($ch);
-session_unset();
-session_destroy();
-?>
-<script>
-$(document).ready(function(){
- //Cada 10 segundos (10000 milisegundos) se ejecutará la función refrescar
- setTimeout(refrescar, 4000);
-});
-    function refrescar(){
- //Actualiza la página
- location.reload();
-}
-        </script>
-<?php
-
+    <?php
 
 }else{
-       
-        $_SESSION['cont'] = $_SESSION['cont'] - 1;
-        echo "<p class='alert alert-warning'>Wrong code, you have ".$_SESSION['cont']." more attempts</p>";
- if($_SESSION['cont'] == 0){
-
-     
-    
-        //url de destino
-        $url = 'http://localhost:4000';
-
-        //iniciamos curl
-        $ch = curl_init($url);
-        //datos a enviar
-        $data = array(
-            'usuario' => $_SESSION['usuario']
-        );
-        //lo decodificamos a json
-        $payload = json_encode(array("destruir" => $data));
-        //parametros de envio
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-        
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-        
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        
-        
-        //ejecutamos el post
-        $result = curl_exec($ch);
-        
-
-
-        
-        curl_close($ch);
-      
-        session_unset();
-        session_destroy();
-        ?>
-        <script>
-        $(document).ready(function(){
-         //Cada 10 segundos (10000 milisegundos) se ejecutará la función refrescar
-         setTimeout(refrescar, 1000);
-       });
-            function refrescar(){
-         //Actualiza la página
-         location.reload();
-       }
-                </script>
-       <?php
-    }
-    }
-      
-    }
+    echo "<p class='alert alert-danger'>wrong code</p>";
 }
+
+curl_close($ch);
+
+
+
+}
+}      
+    
+
 
 ?>
     <script src="funciones/enviarcod.js"></script>

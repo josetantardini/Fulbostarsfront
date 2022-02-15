@@ -64,18 +64,18 @@ include '../funcionesg/sesion.php';
   </script>
     <div class="login-page">
         <div class="form">
-            <input type="text" id="name" name="name" maxlength="40" onkeypress="return soloLetras(event)" required
-                placeholder="Name" />
-            <input type="text" name="lastname" maxlength="40" onkeypress="return soloLetras(event)" id="lastname"
-                required placeholder="Last name" />
-            <input type="text" name="mobile" maxlength="20" pattern="[0-9]+" onkeypress="return solonumeros(event)"
-                id="mobile" placeholder="Mobile" />
-            <input type="text" name="country" maxlength="100" id="country" placeholder="Country" />
-            <input type="text" name="city" maxlength="100" id="city" placeholder="City" />
+            <!--<input type="text" id="name" name="name" maxlength="40" onkeypress="return soloLetras(event)" required
+            placeholder="Name" />-->
+            <!--<input type="text" name="lastname" maxlength="40" onkeypress="return soloLetras(event)" id="lastname"
+                required placeholder="Last name" />-->
+            <!--<input type="text" name="mobile" maxlength="20" pattern="[0-9]+" onkeypress="return solonumeros(event)"
+                id="mobile" placeholder="Mobile" />-->
+           <!-- <input type="text" name="country" maxlength="100" id="country" placeholder="Country" />
+            <input type="text" name="city" maxlength="100" id="city" placeholder="City" />-->
             <input type="text" name="billetera" id="billetera" placeholder="Public key of your wallet"/>
             <input type="button" onclick="conectarwallet()" value="Conectar billetera"/>
-            <p>Suscribe to news</p>
-            <input type="checkbox" id="suscribe" id="suscribe" name="suscribe" placeholder="Subscribe to News:" />
+            <!--<p>Suscribe to news</p>-->
+            <!--<input type="checkbox" id="suscribe" id="suscribe" name="suscribe" placeholder="Subscribe to News:" />-->
             <input type="text" name="email" id="email" placeholder="Email" required />
             <input type="password" maxlength="100" name="password" id="password" placeholder="password" required />
             <p id="passstrength"></p>

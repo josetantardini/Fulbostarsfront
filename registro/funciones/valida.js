@@ -12,13 +12,8 @@ $(document).ready(function() {
         var rpassword = $('#rpassword').val();
         var billetera = $('#billetera').val();
         var isChecked = document.getElementById('acept').checked;
-        var isCheckedsuscribe = document.getElementById('suscribe').checked;
 
-        if (isCheckedsuscribe) {
-            var suscribe = 1;
-        } else {
-            var suscribe = 0;
-        }
+
 
 
         if (isChecked) {
@@ -35,16 +30,10 @@ $(document).ready(function() {
                 type: 'POST',
                 url: 'funciones/registrar.php',
                 data: {
-                    'name': name,
                     'enviar': enviar,
-                    'lastname': lastname,
-                    'mobile': mobile,
-                    'city': city,
-                    'country': country,
                     'password': password,
                     'rpassword': rpassword,
                     'acept': acept,
-                    'suscribe': suscribe,
                     'email': email,
                     'billetera': billetera
                 },
