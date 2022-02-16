@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
 <!-- TODAS LAS COSAS QUE USO :D , USA MENOS SALAME DEAHH -->
-
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
 <!-- Fuentes -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
@@ -30,9 +30,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <!-- Magnific Popup core CSS file -->
-<link rel="stylesheet" href="magnific-popup/magnific-popup.css">
 <!-- Magnific Popup core JS file -->
-<script src="magnific-popup/jquery.magnific-popup.js"></script>
 
     
 <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
@@ -96,11 +94,13 @@ include "funcionesg/logout.php";
  
 ?>
 	 <div class="d-flex justify-content-center align-items-center flex-column" style="min-height: 100vh;">
-	 <?php   if ( isset($_SESSION['user_id']) && isset($_SESSION['user_email']) && $_SESSION['activo'] == 1  ) { //Esto habria moverlo a otra pagina
+	 <?php   if (isset($_SESSION['token'])) { //Esto habria moverlo a otra pagina
 		   ?>
-		<img class="imgavatar" src="./avatars/<?php echo $_SESSION['avatar']; ?>"   alt="avatar">
-        <h1 class="text-center display-4" style="margin-top: -60px;font-size: 2rem"><?=$_SESSION['user_full_name']?></h1>
-		<h1 class="text-center display-4" style="margin-top: -10px;font-size: 2rem">Tokens =  <?=$_SESSION['tokens']?></h1>
+		<img class="imgavatar" src="./avatars/1.png ?>"   alt="avatar">
+      <div id="valores">
+
+
+      </div>
 		
       <a href="./cuenta/configuracion">Cuenta</a>
       <a href="withdraw/funds">Withdraw funds</a>
@@ -113,7 +113,7 @@ include "funcionesg/logout.php";
 		</form>
 		
 		
-		<?php }  if (!isset($_SESSION['user_email']) || !isset($_SESSION['user_email'])) {   
+		<?php }  if (!isset($_SESSION['token'])) {   
 			?>
 
 				<a href="login/login">Login</a>
@@ -138,7 +138,50 @@ include "funcionesg/logout.php";
 
 
 
+<script>
 
+function reqlistener() {
+    id = document.getElementById("valores");
+    var valores = JSON.parse(this.responseText);
+
+
+
+    for (var i = 0; i < valores.length; i++) {
+       
+        id.innerHTML += "<h2>" + valores[i].Tokens + "</h2>";
+        id.innerHTML += "<h2>" + valores[i].Experience + "</h2>";
+
+
+    }
+}
+
+var oreq = new XMLHttpRequest();
+//cuando cargue XMLHTTPREQUEST MOSTRALO EN EL CONSOLE.LOG DE LA FUNCION DE ARRIBA
+
+oreq.addEventListener("load", reqlistener);
+
+oreq.open("POST", "http://45.77.191.253:3000/api");
+//post para enviar datos  Get para obtener
+oreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+<?php $token =  $_SESSION['token'];
+
+$token2 = "$token,C13BECC3544694AF84022CCC5DB3EE30,C13BECC3544694AF84022CCC5DB3EE30"; 
+$tokenmodificado = strtoupper(hash("sha256",$token2));
+?>
+let firma = "<?php echo $tokenmodificado ?>";
+let my_data = {
+  'action': 'GetInformation',
+  "data": {
+        "token": "<?php echo $_SESSION['token'] ?>"
+    },
+    "who": "C13BECC3544694AF84022CCC5DB3EE30",
+    "sign": firma
+  }
+  console.log(my_data);
+
+oreq.send(my_data);
+
+</script>
 
 </body>
 </html>

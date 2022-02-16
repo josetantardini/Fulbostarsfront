@@ -55,7 +55,7 @@ else{
 
 $firma = "$email,$password,$billetera,C13BECC3544694AF84022CCC5DB3EE30,C13BECC3544694AF84022CCC5DB3EE30";
 //url de destino
-$url = '181.44.19.197:3000/api';
+$url = 'http://45.77.191.253:3000/api';
 
 //iniciamos curl
 $ch = curl_init($url);

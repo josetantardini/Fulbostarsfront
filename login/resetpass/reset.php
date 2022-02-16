@@ -22,7 +22,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
+    <?php 
+    session_start();
+      if(isset($_SESSION['token'])){
+  
+        header('Location: ../../index');
+    }
     
+    ?>
     <h1>Reset Password</h1>
     <input type="text" name="email" id="email" placeholder="Enter email">
     <input type="submit" value="Send" id="resetpass">

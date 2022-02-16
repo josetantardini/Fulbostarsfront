@@ -64,7 +64,7 @@ if($_POST['codigoemail'] != null){
 
 
         //url de destino
-$url = '181.44.19.197:3000/api';
+$url = 'http://45.77.191.253:3000/api';
 
 //iniciamos curl
 $ch = curl_init($url);
@@ -101,7 +101,7 @@ if($codigoRespuesta === 200){
 
         <script>
 
-            window.location.replace("https://localhost/fulbostars1/login/login");
+            window.location.replace("https://pruebasjoseluis.ddns.net/fulbostars1/login/login");
 
 
         </script>
@@ -116,6 +116,8 @@ curl_close($ch);
 
 
 
+}else{
+    echo "<p class='alert alert-danger'>no code was entered</p>";
 }
 }      
     

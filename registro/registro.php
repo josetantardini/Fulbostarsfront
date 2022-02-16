@@ -33,7 +33,7 @@
 
 <?php
 include '../funcionesg/sesion.php';
-  if(isset($_SESSION['user_id']) && isset($_SESSION['user_email'])){
+  if(isset($_SESSION['token'])){
   
       header('Location: ../index');
   }
